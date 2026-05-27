@@ -233,27 +233,27 @@ setAnimatedVisitedNodes([])
 
 <hr />
 
-<p>
+<p style={{ margin: '6px 0' }}>
   Nodes: {nodes.length}
 </p>
 
-<p>
+<p style={{ margin: '6px 0' }}>
   Edges: {edges.length}
 </p>
 
-<p>
+<p style={{ margin: '6px 0' }}>
   Current Mode: {mode}
 </p>
 
-<p>
+<p style={{ margin: '6px 0' }}>
   Algorithm: {algorithm}
 </p>
 
-<p>
+<p style={{ margin: '6px 0' }}>
   Visited Nodes: {visitedNodes}
 </p>
 
-<p>
+<p style={{ margin: '6px 0' }}>
   Source:
   {sourceNode !== null
     ? ` N${nodes.findIndex(
@@ -262,7 +262,7 @@ setAnimatedVisitedNodes([])
     : ' None'}
 </p>
 
-<p>
+<p style={{ margin: '6px 0' }}>
   Destination:
   {destinationNode !== null
     ? ` N${nodes.findIndex(
@@ -271,14 +271,14 @@ setAnimatedVisitedNodes([])
     : ' None'}
 </p>
 
-<p>
+<p style={{ margin: '6px 0' }}>
   Source:
   {sourceNode
     ? ' Selected'
     : ' Not Selected'}
 </p>
 
-<p>
+<p style={{ margin: '6px 0' }}>
   Destination:
   {destinationNode
     ? ' Selected'
@@ -287,14 +287,14 @@ setAnimatedVisitedNodes([])
 
     <hr />
 
-<p>
+<p style={{ margin: '6px 0' }}>
   Shortest Distance:
   {shortestDistance !== null
     ? ` ${shortestDistance.toFixed(2)}`
     : ' --'}
 </p>
 
-<p>
+<p style={{ margin: '6px 0' }}>
   Path:
   {shortestPath.length > 0
     ? shortestPath
@@ -405,12 +405,12 @@ const styles = {
 
   borderRadius: '20px',
 
-  padding: '20px',
+  padding: '16px',
 
   display: 'flex',
   flexDirection: 'column' as const,
 
-  gap: '14px',
+  gap: '6px',
 
   color: 'white',
 

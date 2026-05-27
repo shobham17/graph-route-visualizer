@@ -1,3 +1,6 @@
+import MinHeap from
+'../dataStructures/MinHeap'
+
 type AdjacencyList = Record<
   number,
   { node: number; weight: number }[]
@@ -18,8 +21,9 @@ export function dijkstra(
 
   const previous: Record<number, number | null> = {}
 
-  const unvisited = new Set<number>()
+  
   const visitedOrder: number[] = []
+  const minHeap = new MinHeap()
 
   // Initialize all nodes
   for (const node in graph) {
@@ -30,40 +34,37 @@ export function dijkstra(
 
     previous[numericNode] = null
 
-    unvisited.add(numericNode)
+    
   }
 
   // Start node distance = 0
   distances[startNode] = 0
+  minHeap.insert({
+  node: startNode,
+  distance: 0,
+})
 
-  while (unvisited.size > 0) {
+while (!minHeap.isEmpty()) {
 
-    let currentNode: number | null = null
+  const minNode =
+    minHeap.extractMin()
 
-    // Find node with minimum distance
-    unvisited.forEach((node) => {
+  if (!minNode) {
+    break
+  }
 
-      if (
-        currentNode === null ||
-        distances[node] <
-        distances[currentNode]
-      ) {
-        currentNode = node
-      }
-    })
+  const currentNode =
+    minNode.node
 
-    if (currentNode === null) {
-      break
-    }
+  visitedOrder.push(
+    currentNode
+  )
 
-    unvisited.delete(currentNode)
-    visitedOrder.push(currentNode)
-
-    // Explore neighbors
-    graph[currentNode].forEach((neighbor) => {
+  graph[currentNode].forEach(
+    (neighbor) => {
 
       const tentativeDistance =
-        distances[currentNode!] +
+        distances[currentNode] +
         neighbor.weight
 
       if (
@@ -76,9 +77,18 @@ export function dijkstra(
 
         previous[neighbor.node] =
           currentNode
+
+        minHeap.insert({
+          node: neighbor.node,
+
+          distance:
+            tentativeDistance,
+        })
       }
-    })
-  }
+    }
+  )
+}
+  
 
  return {
   distances,

@@ -15,59 +15,37 @@ import type {
 } from '../types/graph'
 
 type MapViewProps = {
-
   nodes: NodePosition[]
 
   setNodes: React.Dispatch<
-    React.SetStateAction<
-      NodePosition[]
-    >
+    React.SetStateAction<NodePosition[]>
   >
-
+  shortestPath: number[]
   edges: Edge[]
-
+  
+  animatedVisitedNodes: number[]
   setEdges: React.Dispatch<
-    React.SetStateAction<
-      Edge[]
-    >
+    React.SetStateAction<Edge[]>
   >
 
-  mode:
-    | 'edge'
-    | 'source'
-    | 'destination'
+  mode: 'edge' | 'source' | 'destination'
 
   setMode: React.Dispatch<
     React.SetStateAction<
-      'edge'
-      | 'source'
-      | 'destination'
+      'edge' | 'source' | 'destination'
     >
   >
-
-  shortestPath: number[]
 
   sourceNode: number | null
-
-  destinationNode:
-    | number
-    | null
-
-  animatedVisitedNodes:
-    number[]
+  destinationNode: number | null
 
   setSourceNode: React.Dispatch<
-    React.SetStateAction<
-      number | null
-    >
+    React.SetStateAction<number | null>
   >
 
-  setDestinationNode:
-    React.Dispatch<
-      React.SetStateAction<
-        number | null
-      >
-    >
+  setDestinationNode: React.Dispatch<
+    React.SetStateAction<number | null>
+  >
 }
 
 function MapClickHandler({
@@ -95,7 +73,7 @@ function MapView({
   shortestPath,
   mode,
   setMode,
-  visitedOrder,
+ 
   sourceNode,
   destinationNode,
   animatedVisitedNodes,

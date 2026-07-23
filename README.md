@@ -1,73 +1,164 @@
-# React + TypeScript + Vite
+# 🗺️ Graph Route Visualizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Graph Route Visualizer is an interactive web application that demonstrates how graph algorithms work by allowing users to create custom weighted graphs and visualize the shortest path using **Dijkstra's Algorithm**. The project was built to provide a practical understanding of graph data structures and shortest path computation through real-time visualization.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌐 Live Demo
 
-## React Compiler
+**Application:** https://graph-route-visualizer.vercel.app
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🎯 Motivation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Graph algorithms are often learned theoretically, making them difficult to visualize. This project bridges that gap by enabling users to build custom graphs, assign weighted edges, and observe how Dijkstra's Algorithm determines the shortest path.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# ✨ Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 📍 Interactive Graph Builder
+
+- Create graph nodes by clicking on the map
+- Connect nodes with weighted edges
+- Dynamic graph visualization
+
+### 🧠 Dijkstra's Algorithm
+
+- Select source and destination nodes
+- Compute the shortest path
+- Highlight the optimal route
+- Display total path distance
+
+### 🗺️ Interactive Map
+
+- Built using OpenStreetMap
+- Leaflet-based interactive map
+- Zoom and pan support
+
+### 📊 Visualization
+
+- Node labels
+- Edge weight display
+- Shortest path highlighting
+- Interactive graph manipulation
+
+---
+
+# 🛠 Tech Stack
+
+### Frontend
+
+- React
+- TypeScript
+- React Leaflet
+- Leaflet
+- CSS
+
+### Algorithms
+
+- Dijkstra's Algorithm
+- Weighted Graphs
+- Priority Queue
+
+### Maps
+
+- OpenStreetMap
+- Leaflet
+
+### Deployment
+
+- Vercel
+
+---
+
+# 📂 Project Structure
+
+```text
+GRAPH_ROUTE_VISUALIZER
+│
+├── src
+│   ├── components
+│   ├── algorithms
+│   ├── types
+│   ├── utils
+│   └── ...
+│
+├── public
+│
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# 🚀 Getting Started
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Clone the Repository
+
+```bash
+git clone https://github.com/shobham17/GRAPH_ROUTE_VISUALIZER.git
 ```
+
+## Install Dependencies
+
+```bash
+npm install
+```
+
+## Run the Development Server
+
+```bash
+npm run dev
+```
+
+Open the application in your browser after the development server starts.
+
+---
+
+# 🧩 How It Works
+
+1. Create graph nodes on the map.
+2. Connect nodes with weighted edges.
+3. Select a source node.
+4. Select a destination node.
+5. Run Dijkstra's Algorithm.
+6. The shortest path is highlighted along with the total route distance.
+
+---
+
+# 📚 Concepts Demonstrated
+
+- Graph Data Structures
+- Weighted Graph Representation
+- Dijkstra's Shortest Path Algorithm
+- Priority Queue
+- Interactive Graph Visualization
+- React State Management
+- TypeScript
+
+---
+
+# 🚀 Future Improvements
+
+- A* Search Algorithm
+- Bellman-Ford Algorithm
+- BFS & DFS Visualization
+- Save & Load Graphs
+- Undo / Redo Functionality
+- Animated Algorithm Execution
+- Mobile Responsive Interface
+
+---
+
+# 👨‍💻 Author
+
+**Shobham Kishan**
+
+GitHub: https://github.com/shobham17
+
+---
+
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
